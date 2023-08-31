@@ -22,20 +22,21 @@ function App() {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <div className='app'>
-                    <main className='content'>
+                    <main className='content' style={{ display: "flex" }}>
+                        <Sidebar />
                         <Topbar />
                         <Routes>
                             <Route path='/' element={<Dashboard />} />
                             {/* <Route path='/team' element={<Team />} />
-                        <Route path='/invoices' element={<Invoices />} />
-                        <Route path='/contacts' element={<Contacts />} />
-                        <Route path='/bar' element={<Bar />} />
-                        <Route path='/form' element={<Form />} />
-                        <Route path='/line' element={<Line />} />
-                        <Route path='/pie' element={<Pie />} />
-                        <Route path='/faq' element={<Faq />} />
-                        <Route path='/geography' element={<Geography />} />
-                        <Route path='/Calendar' element={<Calendar />} /> */}
+                            <Route path='/invoices' element={<Invoices />} />
+                            <Route path='/contacts' element={<Contacts />} />
+                            <Route path='/bar' element={<Bar />} />
+                            <Route path='/form' element={<Form />} />
+                            <Route path='/line' element={<Line />} />
+                            <Route path='/pie' element={<Pie />} />
+                            <Route path='/faq' element={<Faq />} />
+                            <Route path='/geography' element={<Geography />} />
+                            <Route path='/Calendar' element={<Calendar />} /> */}
                         </Routes>
                     </main>
                 </div>
