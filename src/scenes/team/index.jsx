@@ -19,7 +19,7 @@ const Team = () => {
             field: "name",
             headerName: "Name",
             flex: 1,
-            cellClasssName: "name-column-cell",
+            cellClassName: "name-column--cell",
         },
 
         {
@@ -41,8 +41,8 @@ const Team = () => {
         },
 
         {
-            field: "acess",
-            headerName: "Acess Level",
+            field: "access",
+            headerName: "Access Level",
             flex: 1,
             renderCell: ({ row: { access } }) => {
                 return (
@@ -75,7 +75,35 @@ const Team = () => {
     return (
         <Box m='20px'>
             <Header title='TEAM' subtitle='Managing the Team Members' />
-            <Box m='40px 0 0 0' height='75vh'>
+            <Box
+                m='40px 0 0 0'
+                height='75vh'
+                sx={{
+                    "& .MuiDataGrid-root": {
+                        border: "none",
+                    },
+
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: "none",
+                    },
+
+                    "& .name-column--cell": {
+                        color: colors.greenAccent[300],
+                    },
+
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: colors.blueAccent[700],
+                        borderBottom: "none",
+                    },
+                    "& .MuiDataGrid-virtualScroller": {
+                        backgroundColor: colors.primary[400],
+                    },
+                    "& .MuiDataGrid-footerContainer": {
+                        borderTop: "none",
+                        backgroundColor: colors.blueAccent[700],
+                    },
+                }}
+            >
                 <DataGrid rows={mockDataTeam} columns={columns}></DataGrid>
             </Box>
         </Box>
