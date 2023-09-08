@@ -17,7 +17,6 @@ const Team = () => {
         {
             field: "name",
             headerName: "Name",
-            flex: 1,
             cellClassName: "name-column--cell",
         },
 
@@ -31,27 +30,22 @@ const Team = () => {
         {
             field: "phone",
             headerName: "Phone Number",
-            flex: 1,
         },
         {
             field: "email",
             headerName: "Email",
-            flex: 1,
         },
         {
             field: "address",
             headerName: "Address",
-            flex: 1,
         },
         {
             field: "city",
             headerName: "City",
-            flex: 1,
         },
         {
             field: "zipCode",
             headerName: "ZipCode",
-            flex: 1,
         },
     ];
     return (
