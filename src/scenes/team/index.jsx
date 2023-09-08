@@ -18,6 +18,7 @@ const Team = () => {
         {
             field: "name",
             headerName: "Name",
+            flex: 1,
             cellClassName: "name-column--cell",
         },
 
@@ -31,24 +32,28 @@ const Team = () => {
         {
             field: "phone",
             headerName: "Phone Number",
+            flex: 1,
         },
         {
             field: "email",
             headerName: "Email",
+            flex: 1,
         },
 
         {
             field: "access",
             headerName: "Access Level",
+            flex: 1,
             renderCell: ({ row: { access } }) => {
                 return (
                     <Box
+                        m='0 auto'
                         p='5px'
                         display='flex'
                         justifyContent='center'
                         backgroundColor={
                             access === "admin"
-                                ? colors.greenAccent[500]
+                                ? colors.greenAccent[600]
                                 : colors.greenAccent[700]
                         }
                         borderRadius='4px'
