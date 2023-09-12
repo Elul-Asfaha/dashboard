@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
-const BarChart = () => {
+const BarChart = ({ isDashBoard = false }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
@@ -28,6 +28,11 @@ const BarChart = () => {
                         text: {
                             fill: colors.grey[100],
                         },
+                    },
+                },
+                legends: {
+                    text: {
+                        fill: colors.grey[100],
                     },
                 },
             }}
@@ -82,7 +87,7 @@ const BarChart = () => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: "country",
+                legend: isDashBoard ? undefined : "country",
                 legendPosition: "middle",
                 legendOffset: 32,
             }}
@@ -90,7 +95,7 @@ const BarChart = () => {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: "food",
+                legend: isDashBoard ? undefined : "food",
                 legendPosition: "middle",
                 legendOffset: -40,
             }}
