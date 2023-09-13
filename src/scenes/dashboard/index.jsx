@@ -183,6 +183,68 @@ const Dashboard = () => {
                         <LineChart isDashBoard={true} />
                     </Box>
                 </Box>
+
+                {/* Transactions */}
+                <Box
+                    gridColumn='span 4'
+                    gridRow='span 2'
+                    backgroundColor={colors.primary[400]}
+                    overflow='auto'
+                >
+                    <Box
+                        disply='flex'
+                        justifyContent='space-between'
+                        alignItems='center'
+                        broderBottom={`4px solid ${colors.primary[500]} `}
+                        colors={colors.grey[100]}
+                        p='15px'
+                    >
+                        <Typography
+                            colors={colors.grey[500]}
+                            variant='h5'
+                            fontWeight='600'
+                        >
+                            Recent Transactions
+                        </Typography>
+                    </Box>
+                    {mockTransactions.map((transaction, i) => (
+                        <Box
+                            key={`${transaction.txId}-${i}`}
+                            display='flex'
+                            justifyContent='space-between'
+                            alignItems='center'
+                            broderBottom={`4px solid ${colors.primary[500]} `}
+                            p='15px'
+                        >
+                            <Box>
+                                <Typography
+                                    colors={colors.greenAccent[500]}
+                                    variant='h5'
+                                    fontWeight='600'
+                                >
+                                    {transaction.txId}
+                                </Typography>
+                                <Typography
+                                    colors={colors.grey[100]}
+                                    variant='h5'
+                                    fontWeight='600'
+                                >
+                                    {transaction.user}
+                                </Typography>
+                            </Box>
+                            <Box color={colors.grey[100]}>
+                                {transaction.date}
+                            </Box>
+                            <Box
+                                backgroundColor={colors.greenAccent[500]}
+                                p='5px 10px'
+                                borderRadius='4px'
+                            >
+                                ${transaction.cost}
+                            </Box>
+                        </Box>
+                    ))}
+                </Box>
             </Box>
         </Box>
     );
